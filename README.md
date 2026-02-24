@@ -1,80 +1,56 @@
-# Sistema de Gestión de Alumnos
+# 🚀 BR7FORLIFE
 
-Este proyecto es una aplicación de sistema de gestión de alumnos con un backend desarrollado en Spring y un frontend en Angular. La aplicación permite la creación, lectura, actualización y eliminación de registros de alumnos.
+Repositorio central de la marca **BR7FORLIFE**.
 
-## Tecnologías Utilizadas
+Este espacio representa el núcleo donde se diseñan, construyen y evolucionan distintos productos digitales bajo una misma identidad.
 
-- **Backend**: Spring Boot
-- **Frontend**: Angular
-- **Base de Datos**: MySQL
+---
 
-## Requisitos Previos
+## 🧠 Qué significa este repositorio
 
-- Java 11 o superior
-- Node.js y npm
-- Angular CLI
-- MySQL
+BR7FORLIFE no es un único producto.
 
-## Instalación
+Es un entorno de creación donde:
 
-### Backend (Spring Boot)
+- Se desarrollan múltiples productos digitales
+- Se experimenta con nuevas ideas
+- Se estructuran soluciones para distintas necesidades
+- Se construyen herramientas con visión a largo plazo
 
-1. Clona el repositorio del backend:
-    ```bash
-    git clone <URL_DEL_REPOSITORIO_BACKEND>
-    ```
-2. Navega al directorio del proyecto:
-    ```bash
-    cd backend
-    ```
-3. Configura la base de datos en `application.properties`:
-    ```properties
-    spring.datasource.url=jdbc:mysql://localhost:3306/gestion_alumnos
-    spring.datasource.username=tu_usuario
-    spring.datasource.password=tu_contraseña
-    ```
-4. Ejecuta la aplicación:
-    ```bash
-    ./mvnw spring-boot:run
-    ```
+Cada producto puede tener objetivos, contextos y alcances distintos, pero todos comparten una misma filosofía: calidad, escalabilidad y evolución constante.
 
-### Frontend (Angular)
+---
 
-1. Clona el repositorio del frontend:
-    ```bash
-    git clone <URL_DEL_REPOSITORIO_FRONTEND>
-    ```
-2. Navega al directorio del proyecto:
-    ```bash
-    cd frontend
-    ```
-3. Instala las dependencias:
-    ```bash
-    npm install
-    ```
-4. Ejecuta la aplicación:
-    ```bash
-    ng serve
-    ```
+## 🏗️ Enfoque
 
-## API
+Este repositorio está pensado como:
 
-El backend expone una API RESTful para interactuar con el sistema de gestión de alumnos. Algunas de las rutas principales son:
+- Un núcleo de construcción
+- Un ecosistema de productos
+- Un espacio organizado para crecer
+- Una base sólida para crear soluciones independientes
 
-- `GET /api/alumnos`: Obtiene la lista de todos los alumnos.
-- `POST /api/alumnos`: Crea un nuevo alumno.
-- `GET /api/alumnos/{id}`: Obtiene los detalles de un alumno específico.
-- `PUT /api/alumnos/{id}`: Actualiza los detalles de un alumno específico.
-- `DELETE /api/alumnos/{id}`: Elimina un alumno específico.
+La estructura puede adaptarse y expandirse según las necesidades de cada producto.
 
-## Conexión entre Backend y Frontend
+---
 
-El frontend en Angular se comunica con el backend en Spring Boot a través de las API RESTful mencionadas anteriormente. Asegúrate de que ambos servidores (frontend y backend) estén en ejecución y configurados correctamente para permitir la comunicación.
+## 🌱 Filosofía
 
-## Contribuciones
+- Pensar en sistemas, no en piezas aisladas  
+- Construir con intención  
+- Mantener orden y claridad  
+- Priorizar sostenibilidad sobre improvisación  
 
-Las contribuciones son bienvenidas. Por favor, abre un issue para discutir cualquier cambio importante antes de realizarlo.
+---
 
-## Licencia
+## 👤 Marca
 
-Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo `LICENSE` para más detalles.
+**BR7FORLIFE** representa constancia, identidad y construcción a largo plazo.
+
+Este repositorio es el reflejo técnico de esa visión.
+
+---
+
+## 📌 Nota
+
+El contenido aquí alojado puede evolucionar constantemente a medida que la marca crece y desarrolla nuevas soluciones.

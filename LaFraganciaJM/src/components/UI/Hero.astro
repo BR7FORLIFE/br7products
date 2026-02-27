@@ -1,5 +1,114 @@
 ---
+import type { useTranslate } from "@Lib/i18n";
 
+interface Props {
+  t: ReturnType<typeof useTranslate>;
+}
+
+const { t } = Astro.props as Props;
+
+interface SocialMedia {
+  url: string;
+  name: string;
+  links: {
+    image: string;
+    alt: string;
+  };
+}
+
+const socialMedia: SocialMedia[] = [
+  {
+    url: "",
+    name: "Facebook",
+    links: {
+      image: "/resources/hero/facebook.svg",
+      alt: "",
+    },
+  },
+  {
+    url: "",
+    name: "Instagram",
+    links: {
+      image: "/resources/hero/instagram.svg",
+      alt: "",
+    },
+  },
+  {
+    url: "",
+    name: "Whatsaap",
+    links: {
+      image: "/resources/hero/whatsapp.svg",
+      alt: "",
+    },
+  },
+  {
+    url: "",
+    name: "Gmail",
+    links: {
+      image: "/resources/hero/gmail.svg",
+      alt: "",
+    },
+  },
+];
+
+const phrases = t("hero").phrases;
+const cte = t("hero").cte;
 ---
 
+<section
+  class="w-dvw h-dvh relative flex flex-row-reverse justify-between items-center"
+>
+  <div class="absolute w-full h-full flex justify-center items-center">
+    <img
+      src="/src/assets/hero/client-images/hero-client-without-bg.png"
+      alt="client image without background"
+      class="w-135 h-auto object-contain mask-b-from-10% mask-b-to-97%"
+    />
+  </div>
 
+  <section class="mr-8 font-raleway">
+    <h1 class="text-secondary text-8xl font-semibold">
+      La <br /> Fragancia <br /> JM
+    </h1>
+
+    <div class="inline-flex flex-col gap-3 mt-5 text-white">
+      {
+        phrases.map((phrase, index) => {
+          return index === 0 ? (
+            <span class="font-semibold text-lg">{phrase}</span>
+          ) : (
+            <span class="font-medium text-neutral-300">{phrase}</span>
+          );
+        })
+      }
+      <button
+        class="mt-6 text-neutral-800 w-1/2 h-12 rounded-xl bg-secondary font-semibold"
+        >{cte}</button
+      >
+    </div>
+  </section>
+
+  <article class="relative flex flex-col gap-4 justify-center text-white">
+    {
+      socialMedia.map(({ name, url, links }) => {
+        return (
+          <button class="flex items-center group">
+            <a
+              href={url}
+              class="flex justify-start items-center gap-2 border border-neutral-600 rounded-full p-2"
+            >
+              <img
+                src={links.image}
+                alt={links.alt}
+                class="w-8 h-auto object-contain"
+              />
+            </a>
+            <p class="absolute text-secondary font-raleway font-semibold transform -left-72 group-hover:left-15 duration-200 ease-in -z-10">
+              {name}
+            </p>
+          </button>
+        );
+      })
+    }
+  </article>
+</section>

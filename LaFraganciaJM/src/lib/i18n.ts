@@ -1,11 +1,17 @@
 import es from "@i18n/es.json";
 import en from "@i18n/en.json";
 
-const translations = { es, en };
-type Locale = keyof typeof translations;
+type TranslationSchema = typeof es;
 
-export function useTranslate(locale: Locale) {
-    return function t(key: keyof (typeof translations)[Locale]) {
-        return translations[locale][key] ?? key;
+export type Locale = "es" | "en";
+
+const translations: Record<Locale, TranslationSchema> = {
+    es,
+    en,
+};
+
+export function useTranslate<L extends Locale>(locale: L) {
+    return function t<K extends keyof TranslationSchema>(key: K) {
+        return translations[locale][key];
     };
 }

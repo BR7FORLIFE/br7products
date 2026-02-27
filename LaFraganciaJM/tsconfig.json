@@ -13,6 +13,8 @@
       "@Lib/*": ["lib/*"],
       "@Pages/*": ["pages/*"],
       "@Styles/*": ["styles/*"]
-    }
+    },
+    "resolveJsonModule": true,
+    "esModuleInterop": true
   }
 }

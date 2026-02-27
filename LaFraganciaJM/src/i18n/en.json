@@ -1,3 +1,9 @@
 {
-    
+    "header": {
+        "links": ["COLECCTION", "REVIEWS", "CONTACT"]
+    },
+    "hero": {
+        "phrases": ["The essence of luxury encapsulated in every drop.", "Make each step have its own aroma"],
+        "cte": "Explore Colection"
+    }
 }

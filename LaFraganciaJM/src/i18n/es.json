@@ -1,5 +1,9 @@
 {
     "header": {
-        
+        "links": ["COLECCIÓN", "RESEÑAS", "CONTACTOS"]
+    },
+    "hero": {
+        "phrases": ["La esencia del lujo encapsulada en cada gota.", "Haz que cada paso tenga su propio aroma"],
+        "cte": "Explorar Colección"
     }
 }

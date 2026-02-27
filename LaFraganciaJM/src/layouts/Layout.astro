@@ -2,10 +2,12 @@
 import "../styles/global.css";
 import { ClientRouter } from "astro:transitions";
 import Header from "@Components/UI/Header.astro";
+
+const { locale } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={locale}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -15,7 +17,11 @@ import Header from "@Components/UI/Header.astro";
     <ClientRouter />
   </head>
   <body class="container p-0 m-0 min-w-screen min-h-screen bg-black">
-    <Header />
+    <Header locale={locale} />
     <slot />
   </body>
 </html>
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+</style>

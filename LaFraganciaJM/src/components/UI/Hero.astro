@@ -56,8 +56,9 @@ const cte = t("hero").cte;
 ---
 
 <section
-  class="w-dvw h-dvh relative flex flex-row-reverse justify-between items-center"
+  class="w-full h-dvh relative flex flex-row-reverse justify-between items-center overflow-x-hidden"
 >
+<!--imagen de fondo -->
   <div class="absolute w-full h-full flex justify-center items-center">
     <img
       src="/src/assets/hero/client-images/hero-client-without-bg.png"
@@ -66,12 +67,13 @@ const cte = t("hero").cte;
     />
   </div>
 
-  <section class="mr-8 font-raleway">
-    <h1 class="text-secondary text-8xl font-semibold">
+  <!--seccion titulo, frases y boton -->
+  <section class="mr-8">
+    <h1 class="text-secondary font-betania text-5xl md:text-8xl font-semibold">
       La <br /> Fragancia <br /> JM
     </h1>
 
-    <div class="inline-flex flex-col gap-3 mt-5 text-white">
+    <div class="inline-flex flex-col gap-3 mt-5 text-white font-raleway">
       {
         phrases.map((phrase, index) => {
           return index === 0 ? (
@@ -88,6 +90,7 @@ const cte = t("hero").cte;
     </div>
   </section>
 
+<!--seccion de las redes sociales -->
   <article class="relative flex flex-col gap-4 justify-center text-white">
     {
       socialMedia.map(({ name, url, links }) => {

@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import "aos/dist/aos.css";
 import { ClientRouter } from "astro:transitions";
 import Header from "@Components/UI/Header.astro";
 
@@ -16,12 +17,26 @@ const { locale } = Astro.props;
     <title>La Fragancia JM</title>
     <ClientRouter />
   </head>
-  <body class="container p-0 m-0 min-w-screen min-h-screen bg-black">
+  <body
+    class="container p-0 m-0 min-w-screen min-h-screen bg-black overflow-x-hidden"
+  >
     <Header locale={locale} />
     <slot />
   </body>
 </html>
 
+<script>
+  import AOS from "aos";
+
+  document.addEventListener("astro:page-load", () => {
+    AOS.init({
+      once: true,
+    });
+  });
+</script>
+
 <style>
-  @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"); /*raleway */
+
+  @import url("https://fonts.googleapis.com/css2?family=Betania+Patmos&display=swap"); /*betania */
 </style>

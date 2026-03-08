@@ -22,7 +22,7 @@ const socialMedia: SocialMedia[] = [
     name: "Facebook",
     links: {
       image: "/resources/hero/facebook.svg",
-      alt: "",
+      alt: "Facebook icon",
     },
   },
   {
@@ -30,15 +30,15 @@ const socialMedia: SocialMedia[] = [
     name: "Instagram",
     links: {
       image: "/resources/hero/instagram.svg",
-      alt: "",
+      alt: "Instagram icon",
     },
   },
   {
     url: "",
-    name: "Whatsaap",
+    name: "WhatsAap",
     links: {
       image: "/resources/hero/whatsapp.svg",
-      alt: "",
+      alt: "WhatApp icon",
     },
   },
   {
@@ -46,7 +46,7 @@ const socialMedia: SocialMedia[] = [
     name: "Gmail",
     links: {
       image: "/resources/hero/gmail.svg",
-      alt: "",
+      alt: "Gmail icon",
     },
   },
 ];
@@ -56,62 +56,85 @@ const cte = t("hero").cte;
 ---
 
 <section
-  class="w-full h-dvh relative flex flex-row-reverse justify-between items-center overflow-x-hidden"
+  class="w-full h-dvh relative flex flex-row justify-between items-center overflow-hidden"
 >
-<!--imagen de fondo -->
-  <div class="absolute w-full h-full flex justify-center items-center">
+  <!-- imagen de fondo -->
+  <div class="absolute inset-0 flex justify-center items-center">
     <img
       src="/src/assets/hero/client-images/hero-client-without-bg.png"
       alt="client image without background"
-      class="w-135 h-auto object-contain mask-b-from-10% mask-b-to-97%"
+      class="w-135 h-auto object-contain brightness-110 contrast-110 mask-b-from-10% mask-b-to-97%"
     />
+
+    <div
+      class="absolute inset-0 bg-linear-to-t from-black via-black/10 to-transparent"
+    >
+    </div>
+    <div
+      class="absolute inset-0 bg-linear-to-r from-black via-black/10 to-transparent"
+    >
+    </div>
   </div>
 
-  <!--seccion titulo, frases y boton -->
-  <section class="mr-8">
-    <h1 class="text-secondary font-betania text-5xl md:text-8xl font-semibold">
-      La <br /> Fragancia <br /> JM
-    </h1>
-
-    <div class="inline-flex flex-col gap-3 mt-5 text-white font-raleway">
-      {
-        phrases.map((phrase, index) => {
-          return index === 0 ? (
-            <span class="font-semibold text-lg">{phrase}</span>
-          ) : (
-            <span class="font-medium text-neutral-300">{phrase}</span>
-          );
-        })
-      }
-      <button
-        class="mt-6 text-neutral-800 w-1/2 h-12 rounded-xl bg-secondary font-semibold"
-        >{cte}</button
+  <article
+    class="relative flex flex-col items-center justify-center md:items-end md:justify-center w-full md:absolute md:inset-0"
+  >
+    <!-- Sección título, frases y botón -->
+    <section
+      class="flex flex-col items-center text-center md:max-w-md md:px-4 md:mr-12"
+    >
+      <h1
+        class="text-secondary font-betania text-6xl leading-[0.9] md:text-8xl font-semibold drop-shadow-lg"
       >
-    </div>
-  </section>
+        La <br /> Fragancia <br /> JM
+      </h1>
 
-<!--seccion de las redes sociales -->
-  <article class="relative flex flex-col gap-4 justify-center text-white">
-    {
-      socialMedia.map(({ name, url, links }) => {
-        return (
-          <button class="flex items-center group">
-            <a
-              href={url}
-              class="flex justify-start items-center gap-2 border border-neutral-600 rounded-full p-2"
+      <div class="flex flex-col gap-3 mt-6 text-white font-raleway">
+        {
+          phrases.map((phrase, index) => (
+            <span
+              class={`font-semibold ${
+                index === 0
+                  ? "text-neutral-200 text-sm md:text-lg"
+                  : "text-neutral-300 text-sm md:text-base"
+              }`}
             >
-              <img
-                src={links.image}
-                alt={links.alt}
-                class="w-8 h-auto object-contain"
-              />
-            </a>
-            <p class="absolute text-secondary font-raleway font-semibold transform -left-72 group-hover:left-15 duration-200 ease-in -z-10">
-              {name}
-            </p>
-          </button>
-        );
-      })
-    }
+              {phrase}
+            </span>
+          ))
+        }
+
+        <button
+          class="mt-8 px-8 py-3 rounded-xl bg-secondary text-black font-semibold shadow-lg hover:scale-105 transition"
+        >
+          {cte}
+        </button>
+      </div>
+    </section>
   </article>
+
+  <!-- Sidebar de redes sociales -->
+  <section
+    class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-row gap-4 md:fixed md:top-1/2 md:left-5 md:-translate-y-1/2 md:flex-col md:gap-6 z-50"
+  >
+    {
+      socialMedia.map(({ name, url, links }) => (
+        <a
+          href={url}
+          class="group relative flex items-center justify-start md:w-10 md:h-10 rounded-r-xl bg-black/50 hover:md:w-auto hover:pl-3 transition-all duration-300"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src={links.image}
+            alt={links.alt}
+            class="w-6 h-6 object-contain z-10"
+          />
+          <span class="hidden md:block absolute left-12 text-neutral-200 font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+            {name}
+          </span>
+        </a>
+      ))
+    }
+  </section>
 </section>
